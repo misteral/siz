@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  imy: MyString
+  otch: MyString
+  fam: MyString
+  otdel_id: 1
+  dolgnost_id: 1
+
+two:
+  imy: MyString
+  otch: MyString
+  fam: MyString
+  otdel_id: 1
+  dolgnost_id: 1

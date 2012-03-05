@@ -1,0 +1,9 @@
+ru:
+  activerecord:
+    models:
+      rabotnik: Работник
+    attributes:
+      profile:
+        imy: "Имя работника"
+        otch: "Отчество"
+        fmy: "Фамилия"

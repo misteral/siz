@@ -1,0 +1,32 @@
+<h1>Rabotnik</h1>
+
+<p>
+  <b>Imy</b><br>
+  <%= @rabotnik.imy %>
+</p>
+
+<p>
+  <b>Otch</b><br>
+  <%= @rabotnik.otch %>
+</p>
+
+<p>
+  <b>Fam</b><br>
+  <%= @rabotnik.fam %>
+</p>
+
+<p>
+  <b>Otdel</b><br>
+  <%= @rabotnik.otdel_id %>
+</p>
+
+<p>
+  <b>Dolgnost</b><br>
+  <%= @rabotnik.dolgnost_id %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', rabotniks_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_rabotnik_path(@rabotnik), :class => 'btn' %>
+  <%= link_to 'Delete', rabotnik_path(@rabotnik), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

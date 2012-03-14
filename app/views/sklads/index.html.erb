@@ -1,0 +1,23 @@
+<h1>Listing sklads</h1>
+
+<table>
+  <tr>
+    <th>Naim</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sklads.each do |sklad| %>
+  <tr>
+    <td><%= sklad.naim %></td>
+    <td><%= link_to 'Show', sklad %></td>
+    <td><%= link_to 'Edit', edit_sklad_path(sklad) %></td>
+    <td><%= link_to 'Destroy', sklad, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sklad', new_sklad_path %>

@@ -1,0 +1,23 @@
+<h1>Listing postavshiks</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @postavshiks.each do |postavshik| %>
+  <tr>
+    <td><%= postavshik.name %></td>
+    <td><%= link_to 'Show', postavshik %></td>
+    <td><%= link_to 'Edit', edit_postavshik_path(postavshik) %></td>
+    <td><%= link_to 'Destroy', postavshik, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Postavshik', new_postavshik_path %>

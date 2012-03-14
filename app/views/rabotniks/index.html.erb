@@ -1,18 +1,18 @@
-<h1>Справочник работники</h1>
+<h1>Rabotniks</h1>
 <table class="table table-striped">
   <thead>
     <tr>
       <th>ID</th>
-      <th>ФИО</th>
-      <th>Создан</th>
-      <th>Действия</th>
+      <th>Imy</th>
+      <th>Created at</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
     <% @rabotniks.each do |rabotnik| %>
       <tr>
         <td><%= rabotnik.id %></td>
-        <td><%= link_to rabotnik.fam+" "+rabotnik.imy+" "+rabotnik.otch, rabotnik_path(rabotnik) %></td>
+        <td><%= link_to rabotnik.imy, rabotnik_path(rabotnik) %></td>
         <td><%= rabotnik.created_at %></td>
         <td>
           <%= link_to 'Edit', edit_rabotnik_path(rabotnik), :class => 'btn btn-mini' %>

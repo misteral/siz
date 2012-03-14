@@ -1,0 +1,23 @@
+<h1>Listing vid_sos</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @vid_sos.each do |vid_so| %>
+  <tr>
+    <td><%= vid_so.name %></td>
+    <td><%= link_to 'Show', vid_so %></td>
+    <td><%= link_to 'Edit', edit_vid_so_path(vid_so) %></td>
+    <td><%= link_to 'Destroy', vid_so, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Vid so', new_vid_so_path %>

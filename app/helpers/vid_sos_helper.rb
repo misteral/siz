@@ -1,0 +1,2 @@
+module VidSosHelper
+end

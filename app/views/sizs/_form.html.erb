@@ -1,0 +1,15 @@
+<%= simple_form_for(@siz) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.association :tip_so %>
+    <%= f.association :vid_so %>
+    <%= f.input :sert %>
+    <%= f.input :nom %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

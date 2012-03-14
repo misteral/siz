@@ -1,0 +1,2 @@
+module PostavshiksHelper
+end

@@ -11,16 +11,72 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120305041238) do
+ActiveRecord::Schema.define(:version => 20120306054427) do
+
+  create_table "dolgnosts", :force => true do |t|
+    t.string   "name"
+    t.integer  "prior"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "otdels", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "name"
+  end
+
+  create_table "postavshiks", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "rabotniks", :force => true do |t|
     t.string   "imy"
     t.string   "otch"
     t.string   "fam"
-    t.integer  "otdel_id"
-    t.integer  "dolgnost_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "otdel_id"
+    t.integer  "dolgnost_id"
+    t.integer  "razmer_id"
+    t.string   "razmer"
+    t.string   "rost"
+    t.string   "razmer_o"
+    t.string   "razmer_g"
+    t.string   "tn"
+  end
+
+  create_table "sizs", :force => true do |t|
+    t.string   "name"
+    t.integer  "tip_so_id"
+    t.integer  "vid_so_id"
+    t.string   "sert"
+    t.string   "nom"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "sizs", ["tip_so_id"], :name => "index_sizs_on_tip_so_id"
+  add_index "sizs", ["vid_so_id"], :name => "index_sizs_on_vid_so_id"
+
+  create_table "sklads", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "name"
+  end
+
+  create_table "tip_sos", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "vid_sos", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

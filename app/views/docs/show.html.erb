@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @doc.name %>
+</p>
+
+<p>
+  <b>Utv:</b>
+  <%= @doc.utv %>
+</p>
+
+<p>
+  <b>Sklad:</b>
+  <%= @doc.sklad %>
+</p>
+
+<p>
+  <b>Postavshik:</b>
+  <%= @doc.postavshik %>
+</p>
+
+<p>
+  <b>Rabotnik:</b>
+  <%= @doc.rabotnik %>
+</p>
+
+
+<%= link_to 'Edit', edit_doc_path(@doc) %> |
+<%= link_to 'Back', docs_path %>

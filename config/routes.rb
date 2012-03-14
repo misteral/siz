@@ -1,4 +1,18 @@
 Siz1::Application.routes.draw do
+  resources :docs
+
+  resources :postavshiks
+
+  resources :sizs
+
+  resources :vid_sos
+
+  resources :sklads
+
+  resources :tip_sos
+
+  resources :dolgnosts
+
   resources :rabotniks
 
   # The priority is based upon order of creation:

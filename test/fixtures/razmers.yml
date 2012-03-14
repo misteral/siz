@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  naim: MyString
+  razmer: MyString
+  rost: MyString
+  razmer_o: MyString
+  razmer_g: MyString
+
+two:
+  naim: MyString
+  razmer: MyString
+  rost: MyString
+  razmer_o: MyString
+  razmer_g: MyString

@@ -1,0 +1,23 @@
+<h1>Listing tip_sos</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tip_sos.each do |tip_so| %>
+  <tr>
+    <td><%= tip_so.name %></td>
+    <td><%= link_to 'Show', tip_so %></td>
+    <td><%= link_to 'Edit', edit_tip_so_path(tip_so) %></td>
+    <td><%= link_to 'Destroy', tip_so, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tip so', new_tip_so_path %>

@@ -11,8 +11,13 @@ gem 'twitter-bootstrap-rails'
 gem 'simple_form'
 
 gem 'russian', '~> 0.6.0'
-gem 'i18n_generators'
 
+group :development, :test do
+    #gem 'railroady'  # применяется для рисования схем
+    #gem "rails-erd"
+  gem 'i18n_generators'
+
+end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  siz: 
+  doc: 
+  kol: 9.99
+
+two:
+  siz: 
+  doc: 
+  kol: 9.99

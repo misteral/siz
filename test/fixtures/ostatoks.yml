@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  kol: 9.99
+  sklads: 
+  sizs: 
+
+two:
+  kol: 9.99
+  sklads: 
+  sizs: 

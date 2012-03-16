@@ -1,0 +1,104 @@
+ru:
+  activerecord:
+    models:
+      doc: Документы
+      doc_table: Таблица для документо
+      dolgnost: Должности
+      ostatok: Остатки  #g
+      otdel: Подразделения  #g
+      postavshik: Поставщики  #g
+      rabotnik: Работники  #g
+      razmer: Размеры  #g
+      siz: СИЗ  #g
+      sklad: Склады  #g
+      tip_doc: Тип документа  #g
+      tip_so: Тип СИЗ  #g
+      usr_history: Движения  #g
+      vid_so: Вид спецодежды  #g
+
+    attributes:
+      doc:
+        doc_tables: doc_tables  #g
+        name: Имя документа  #g
+        postavshik: :activerecord.models.postavshik  #g
+        rabotnik: :activerecord.models.rabotnik  #g
+        sklad: :activerecord.models.sklad  #g
+        tip_doc: :activerecord.models.tip_doc  #g
+        usr_histories: usr_histories  #g
+        utv: Статус утверждения  #g
+
+      doc_table:
+        doc: :activerecord.models.doc  #g
+        kol: Количество  #g
+        razmer: :activerecord.models.razmer  #g
+        siz: :activerecord.models.siz  #g
+
+      dolgnost:
+        name: Наименование должности #g
+        prior: Приоритет  #g
+        rabotniks: rabotniks  #g
+
+      ostatok:
+        kol: Количество  #g
+        siz: :activerecord.models.siz  #g
+        sklad: :activerecord.models.sklad  #g
+
+      otdel:
+        name: Наименование отдела  #g
+        rabotniks: rabotniks  #g
+
+      postavshik:
+        docs: docs  #g
+        name: Наименование поставщика  #g
+
+      rabotnik:
+        docs: docs  #g
+        dolgnost: Должность  #g
+        fam: Фамилия  #g
+        imy: Имя  #g
+        otch: Отчество  #g
+        otdel: :activerecord.models.otdel  #g
+        razmer: :activerecord.models.razmer  #g
+        tn: Табельный номер  #g
+
+      razmer:
+        doc_tables: doc_tables  #g
+        name: Имя  #g
+        rabotniks: rabotniks  #g
+        razm: Размер  #g
+        razm_g: Размер головы  #g
+        rost: Рост  #g
+        rost_o: Размер обуви  #g
+
+      siz:
+        doc_tables: doc_tables  #g
+        name: name  #g
+        nom: nom  #g
+        ostatoks: ostatoks  #g
+        sert: sert  #g
+        tip_so: :activerecord.models.tip_so  #g
+        usr_histories: usr_histories  #g
+        vid_so: :activerecord.models.vid_so  #g
+
+      sklad:
+        docs: docs  #g
+        name: Наименование склада  #g
+        ostatoks: ostatoks  #g
+
+      tip_doc:
+        docs: docs  #g
+        name: Тип документа  #g
+
+      tip_so:
+        name: Тип СИЗ  #g
+        sizs: sizs  #g
+
+      usr_history:
+        doc: :activerecord.models.doc  #g
+        kol: Количество  #g
+        napr: Направление  #g
+        siz: :activerecord.models.siz  #g
+
+      vid_so:
+        name: Вид СИЗ  #g
+        sizs: sizs  #g

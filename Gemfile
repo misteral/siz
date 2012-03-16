@@ -7,9 +7,10 @@ gem 'rails', '3.2.2'
 
 gem 'sqlite3'
 
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails', :git => 'http://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'simple_form'
 
+gem 'i18n'
 gem 'russian', '~> 0.6.0'
 
 group :development, :test do

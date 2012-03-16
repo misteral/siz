@@ -1,10 +1,12 @@
-<p id="notice"><%= notice %></p>
+<h1>/Postavshik</h1>
 
 <p>
-  <b>Name:</b>
+  <b>Name</b><br>
   <%= @postavshik.name %>
 </p>
 
-
-<%= link_to 'Edit', edit_postavshik_path(@postavshik) %> |
-<%= link_to 'Back', postavshiks_path %>
+<div class="form-actions">
+  <%= link_to 'Back', postavshiks_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_postavshik_path(@postavshik), :class => 'btn' %>
+  <%= link_to 'Delete', postavshik_path(@postavshik), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

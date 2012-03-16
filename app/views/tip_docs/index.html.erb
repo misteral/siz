@@ -1,0 +1,26 @@
+<h1>Tip Docs</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tip_docs.each do |tip_doc| %>
+      <tr>
+        <td><%= tip_doc.id %></td>
+        <td><%= link_to tip_doc.name, tip_doc_path(tip_doc) %></td>
+        <td><%= tip_doc.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_tip_doc_path(tip_doc), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', tip_doc_path(tip_doc), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New', new_tip_doc_path, :class => 'btn btn-primary' %>

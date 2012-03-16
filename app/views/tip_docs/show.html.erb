@@ -1,0 +1,12 @@
+<h1>Tip Doc</h1>
+
+<p>
+  <b>Name</b><br>
+  <%= @tip_doc.name %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', tip_docs_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_tip_doc_path(@tip_doc), :class => 'btn' %>
+  <%= link_to 'Delete', tip_doc_path(@tip_doc), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

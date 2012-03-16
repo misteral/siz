@@ -1,23 +1,26 @@
-<h1>Listing postavshiks</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @postavshiks.each do |postavshik| %>
-  <tr>
-    <td><%= postavshik.name %></td>
-    <td><%= link_to 'Show', postavshik %></td>
-    <td><%= link_to 'Edit', edit_postavshik_path(postavshik) %></td>
-    <td><%= link_to 'Destroy', postavshik, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+<h1>Postavshiks</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @postavshiks.each do |postavshik| %>
+      <tr>
+        <td><%= postavshik.id %></td>
+        <td><%= link_to postavshik.name, postavshik_path(postavshik) %></td>
+        <td><%= postavshik.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_postavshik_path(postavshik), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', postavshik_path(postavshik), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Postavshik', new_postavshik_path %>
+<%= link_to 'New', new_postavshik_path, :class => 'btn btn-primary' %>

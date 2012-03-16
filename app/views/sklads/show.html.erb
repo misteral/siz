@@ -1,10 +1,12 @@
-<p id="notice"><%= notice %></p>
+<h1>/Sklad</h1>
 
 <p>
-  <b>Naim:</b>
-  <%= @sklad.naim %>
+  <b>Name</b><br>
+  <%= @sklad.name %>
 </p>
 
-
-<%= link_to 'Edit', edit_sklad_path(@sklad) %> |
-<%= link_to 'Back', sklads_path %>
+<div class="form-actions">
+  <%= link_to 'Back', sklads_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_sklad_path(@sklad), :class => 'btn' %>
+  <%= link_to 'Delete', sklad_path(@sklad), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

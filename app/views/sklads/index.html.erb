@@ -1,23 +1,26 @@
-<h1>Listing sklads</h1>
-
-<table>
-  <tr>
-    <th>Naim</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @sklads.each do |sklad| %>
-  <tr>
-    <td><%= sklad.naim %></td>
-    <td><%= link_to 'Show', sklad %></td>
-    <td><%= link_to 'Edit', edit_sklad_path(sklad) %></td>
-    <td><%= link_to 'Destroy', sklad, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+<h1>Sklads</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sklads.each do |sklad| %>
+      <tr>
+        <td><%= sklad.id %></td>
+        <td><%= link_to sklad.name, sklad_path(sklad) %></td>
+        <td><%= sklad.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_sklad_path(sklad), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', sklad_path(sklad), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Sklad', new_sklad_path %>
+<%= link_to 'New', new_sklad_path, :class => 'btn btn-primary' %>

@@ -1,30 +1,32 @@
-<p id="notice"><%= notice %></p>
+<h1>/Siz</h1>
 
 <p>
-  <b>Name:</b>
+  <b>Name</b><br>
   <%= @siz.name %>
 </p>
 
 <p>
-  <b>Tip so:</b>
-  <%= @siz.tip_so %>
+  <b>Tip so</b><br>
+  <%= @siz.tip_so_id %>
 </p>
 
 <p>
-  <b>Vid so:</b>
-  <%= @siz.vid_so %>
+  <b>Vid so</b><br>
+  <%= @siz.vid_so_id %>
 </p>
 
 <p>
-  <b>Sert:</b>
+  <b>Sert</b><br>
   <%= @siz.sert %>
 </p>
 
 <p>
-  <b>Nom:</b>
+  <b>Nom</b><br>
   <%= @siz.nom %>
 </p>
 
-
-<%= link_to 'Edit', edit_siz_path(@siz) %> |
-<%= link_to 'Back', sizs_path %>
+<div class="form-actions">
+  <%= link_to 'Back', sizs_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_siz_path(@siz), :class => 'btn' %>
+  <%= link_to 'Delete', siz_path(@siz), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

@@ -1,15 +1,52 @@
-<%= simple_form_for(@doc) do |f| %>
-  <%= f.error_notification %>
+<%= form_for @doc, :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> Doc</legend>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :utv %>
-    <%= f.association :sklad %>
-    <%= f.association :postavshik %>
-    <%= f.association :rabotnik %>
-  </div>
+    <div class="control-group">
+      <%= f.label :name, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :name, :class => 'text_field' %>
+      </div>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+    <div class="control-group">
+      <%= f.label :utv, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.check_box :utv, :class => 'check_box' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :sklad_id, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.number_field :sklad_id, :class => 'number_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :postavshik_id, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.number_field :postavshik_id, :class => 'number_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :rabotnik_id, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.number_field :rabotnik_id, :class => 'number_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :tip_doc_id, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.number_field :tip_doc_id, :class => 'number_field' %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', docs_path, :class => 'btn' %>
+    </div>
+  </fieldset>
 <% end %>

@@ -1,31 +1,26 @@
-<h1>Listing sizs</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Tip so</th>
-    <th>Vid so</th>
-    <th>Sert</th>
-    <th>Nom</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @sizs.each do |siz| %>
-  <tr>
-    <td><%= siz.name %></td>
-    <td><%= siz.tip_so %></td>
-    <td><%= siz.vid_so %></td>
-    <td><%= siz.sert %></td>
-    <td><%= siz.nom %></td>
-    <td><%= link_to 'Show', siz %></td>
-    <td><%= link_to 'Edit', edit_siz_path(siz) %></td>
-    <td><%= link_to 'Destroy', siz, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+<h1>Sizs</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sizs.each do |siz| %>
+      <tr>
+        <td><%= siz.id %></td>
+        <td><%= link_to siz.name, siz_path(siz) %></td>
+        <td><%= siz.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_siz_path(siz), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', siz_path(siz), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Siz', new_siz_path %>
+<%= link_to 'New', new_siz_path, :class => 'btn btn-primary' %>

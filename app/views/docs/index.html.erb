@@ -1,31 +1,26 @@
-<h1>Listing docs</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Utv</th>
-    <th>Sklad</th>
-    <th>Postavshik</th>
-    <th>Rabotnik</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @docs.each do |doc| %>
-  <tr>
-    <td><%= doc.name %></td>
-    <td><%= doc.utv %></td>
-    <td><%= doc.sklad %></td>
-    <td><%= doc.postavshik %></td>
-    <td><%= doc.rabotnik %></td>
-    <td><%= link_to 'Show', doc %></td>
-    <td><%= link_to 'Edit', edit_doc_path(doc) %></td>
-    <td><%= link_to 'Destroy', doc, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+<h1>Docs</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @docs.each do |doc| %>
+      <tr>
+        <td><%= doc.id %></td>
+        <td><%= link_to doc.name, doc_path(doc) %></td>
+        <td><%= doc.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_doc_path(doc), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', doc_path(doc), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Doc', new_doc_path %>
+<%= link_to 'New', new_doc_path, :class => 'btn btn-primary' %>

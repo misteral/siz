@@ -15,11 +15,7 @@
       <%= f.input :fam %>
       <%= f.association :dolgnost %>
       <%= f.association :otdel %>
-        <%= f.input :razmer %>
-        <%= f.input :razmer_o %>
-        <%= f.input :razmer_g %>
-        <%= f.input :rost, :hint => 'Рост работника.'%>
       <%= f.button :submit, :class => 'btn-primary' %>
-      <%= submit_tag 'Cancel', :type => :reset, :class => "btn btn-danger" %>
+      <%= link_to 'Отмена', rabotniks_path, :class => 'btn' %>
 
     <% end %>

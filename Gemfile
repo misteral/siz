@@ -12,11 +12,14 @@ gem 'simple_form'
 
 gem 'i18n'
 gem 'russian', '~> 0.6.0'
+gem "cocoon", :git => 'http://github.com/nathanvda/cocoon.git'
+#gem 'nested_form', :git => 'http://github.com/ryanb/nested_form.git'
 
 group :development, :test do
     #gem 'railroady'  # применяется для рисования схем
     #gem "rails-erd"
   gem 'i18n_generators'
+  #gem "nifty-generators"
 
 end
 # Gems used only for assets and not required
@@ -46,4 +49,4 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+gem 'ruby-debug19', :require => 'ruby-debug'

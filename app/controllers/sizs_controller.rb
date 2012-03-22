@@ -41,8 +41,7 @@ class SizsController < ApplicationController
   # POST /sizs.json
   def create
     @siz = Siz.new(params[:siz])
-
-    respond_to do |format|
+      respond_to do |format|
       if @siz.save
         format.html { redirect_to @siz, notice: 'Siz was successfully created.' }
         format.json { render json: @siz, status: :created, location: @siz }

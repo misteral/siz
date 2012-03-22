@@ -42,6 +42,10 @@ class DocsController < ApplicationController
   def create
     @doc = Doc.new(params[:doc])
 
+    #table_doc = @doc.doc_tables.build
+    #siz_doc = table_doc.build
+    #razmer_doc = table_doc.build
+
     respond_to do |format|
       if @doc.save
         format.html { redirect_to @doc, notice: 'Doc was successfully created.' }

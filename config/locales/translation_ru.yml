@@ -19,13 +19,13 @@ ru:
     attributes:
       doc:
         doc_tables: doc_tables  #g
-        name: Имя документа  #g
+        name: 'Имя документа'  #g
         postavshik: :activerecord.models.postavshik  #g
         rabotnik: :activerecord.models.rabotnik  #g
         sklad: :activerecord.models.sklad  #g
         tip_doc: :activerecord.models.tip_doc  #g
         usr_histories: usr_histories  #g
-        utv: Статус утверждения  #g
+        utv: Утвержден  #g
 
       doc_table:
         doc: :activerecord.models.doc  #g
@@ -57,8 +57,8 @@ ru:
         fam: Фамилия  #g
         imy: Имя  #g
         otch: Отчество  #g
-        otdel: :activerecord.models.otdel  #g
-        razmer: :activerecord.models.razmer  #g
+        otdel: Отдел  #g
+        razmer: Размеры  #g
         tn: Табельный номер  #g
 
       razmer:

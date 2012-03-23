@@ -25,9 +25,9 @@
            <b class="caret"></b>
          </a>
          <ul class="dropdown-menu">
-           <li><a href="#">Поступление на склад</a></li>
-           <li><a href="#">Списание со склада на работника</a></li>
-           <li><a href="#">Списание с работника</a></li>
+           <li><%= link_to "Поступление на склад", :controller => "tip_docs", :action => "show", :id =>'1' %></li>
+           <li><%= link_to "Списание со склада на работника",  :controller => "tip_docs", :action => "show", :id =>'2' %></li>
+           <li><%= link_to "Списание с работника",  :controller => "tip_docs", :action => "show", :id =>'3' %></li>
          </ul>
        </li>
 

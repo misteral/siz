@@ -1,9 +1,21 @@
-<h1>Tip Doc</h1>
-
-<p>
-  <b>Name</b><br>
+<h1>Тип документа
   <%= @tip_doc.name %>
-</p>
+</h1>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+<%= render @tip_doc.docs %>
+  </tbody>
+</table>
 
 <div class="form-actions">
   <%= link_to 'Back', tip_docs_path, :class => 'btn'  %>

@@ -1,0 +1,10 @@
+
+      <tr>
+        <td><%= doc.id %></td>
+        <td><%= doc.name %></td>
+        <td><%= doc.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_doc_path(doc, :tip_docum => @tip_doc.id), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', doc_path(doc), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>

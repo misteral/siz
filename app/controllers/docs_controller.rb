@@ -25,6 +25,10 @@ class DocsController < ApplicationController
   # GET /docs/new.json
   def new
     @doc = Doc.new
+    if params[:tip_docum]
+      @tip_docum = params[:tip_docum]
+      format.html {render 'docs/new'+@tip_docum}
+    end
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +39,11 @@ class DocsController < ApplicationController
   # GET /docs/1/edit
   def edit
     @doc = Doc.find(params[:id])
+    if params[:tip_docum]
+      @tip_docum = params[:tip_docum]
+      filerender = 'docs/new'+@tip_docum
+      render filerender
+    end
   end
 
   # POST /docs

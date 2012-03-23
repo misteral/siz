@@ -13,9 +13,6 @@
      <%= f.input :name %>
      <%= f.input :utv %>
      <%= f.association :sklad %>
-     <% if @tip_docum != '1' %>
-       <%= f.association :rabotnik, :label_method => :rabotnik_fio_tn %>
-     <% end  %>
 
 
      <%= f.association :tip_doc %>

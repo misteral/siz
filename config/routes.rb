@@ -1,6 +1,8 @@
 Siz1::Application.routes.draw do
   resources :docs do
-    resources :doc_tables
+    resources :doc_tables do
+      get :autocomplete_brand_name, :on => :collection
+    end
   end
 
 

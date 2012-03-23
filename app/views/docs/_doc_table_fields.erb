@@ -1,8 +1,8 @@
 
 <tr class="nested-fields blabla-fields">
       <td>Номер</td>
-      <td>СИЗ</td>
-      <td>Инвентарный номер</td>
+      <td><%= f.association :siz, :label_method => :name  %></td>
+      <td><%= f.input :brand_name, :url => autocomplete_brand_name_doc_table_path, :as => :autocomplete %></td>
       <td>Размер</td>
       <td>Размер головы</td>
       <td>Размер обуви</td>

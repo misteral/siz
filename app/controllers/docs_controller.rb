@@ -1,9 +1,10 @@
 class DocsController < ApplicationController
+  autocomplete :siz, :name, :full => true
+
   # GET /docs
   # GET /docs.json
   def index
     @docs = Doc.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @docs }

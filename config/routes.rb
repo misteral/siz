@@ -1,12 +1,20 @@
 Siz1::Application.routes.draw do
+
+  resources :razmer_gos
+
+  resources :razmer_os
+
+  resources :razmer_ods
+
+  resources :rosts
+
+  get 'docs/autocomplete_siz_name'
+
   resources :docs do
-    resources :doc_tables do
-      get :autocomplete_brand_name, :on => :collection
-    end
-  end
+    resources :doc_tables
+   end
 
-
-  resources :postavshiks
+    resources :postavshiks
 
   resources :sizs
 

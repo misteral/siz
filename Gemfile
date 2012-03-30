@@ -9,11 +9,12 @@ gem 'sqlite3'
 
 gem 'twitter-bootstrap-rails', :git => 'http://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'simple_form'
-gem 'rails3-jquery-autocomplete'
 
 gem 'i18n'
 gem 'russian', '~> 0.6.0'
-gem "cocoon", :git => 'http://github.com/nathanvda/cocoon.git'
+gem "cocoon", :git => 'http://github.com/nathanvda/cocoon.git' #гем позволяет вставлять nested form
+gem 'rails3-jquery-autocomplete' #гем позволяет добавлять к полям autocomlete
+
 #gem 'nested_form', :git => 'http://github.com/ryanb/nested_form.git'
 
 group :development, :test do

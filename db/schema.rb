@@ -11,19 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120315102304) do
+ActiveRecord::Schema.define(:version => 20120330030752) do
 
   create_table "doc_tables", :force => true do |t|
     t.integer  "siz_id"
     t.integer  "doc_id"
     t.decimal  "kol"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "razmer_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "razmer_od_id"
+    t.integer  "razmer_go_id"
+    t.integer  "razmer_o_id"
+    t.integer  "rost_id"
   end
 
   add_index "doc_tables", ["doc_id"], :name => "index_doc_tables_on_doc_id"
-  add_index "doc_tables", ["razmer_id"], :name => "index_doc_tables_on_razmer_id"
+  add_index "doc_tables", ["razmer_go_id"], :name => "index_doc_tables_on_razmer_go_id"
+  add_index "doc_tables", ["razmer_o_id"], :name => "index_doc_tables_on_razmer_o_id"
+  add_index "doc_tables", ["razmer_od_id"], :name => "index_doc_tables_on_razmer_od_id"
+  add_index "doc_tables", ["rost_id"], :name => "index_doc_tables_on_rost_id"
   add_index "doc_tables", ["siz_id"], :name => "index_doc_tables_on_siz_id"
 
   create_table "docs", :force => true do |t|
@@ -84,12 +90,36 @@ ActiveRecord::Schema.define(:version => 20120315102304) do
     t.string   "tn"
   end
 
+  create_table "razmer_gos", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "razmer_ods", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "razmer_os", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "razmers", :force => true do |t|
     t.string   "name"
     t.string   "rost"
     t.string   "razm"
     t.string   "razm_g"
-    t.string   "rost_o"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "razm_o"
+  end
+
+  create_table "rosts", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

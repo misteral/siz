@@ -1,3 +1,5 @@
+<%= javascript_tag "var autocomplete_items = #{ @autocomplete_items.to_json };" %>
+
 <%= simple_form_for @doc, :html => { :class => 'form-horizontal' } do |f| %>
  <fieldset>
    <legend><%= controller.action_name.capitalize %> / Docs</legend>
@@ -35,7 +37,7 @@
         </thead>
         <tbody id="target">
              <%= f.simple_fields_for :doc_tables do |table| %>
-                <%= render 'doc_table_fields', :f => table %>
+               <%= render 'doc_table_fields', {:f => table} %>
              <% end %>
         </tbody>
       </table>

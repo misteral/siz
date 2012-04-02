@@ -1,0 +1,23 @@
+<h1>Listing razmer_gos</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @razmer_gos.each do |razmer_go| %>
+  <tr>
+    <td><%= razmer_go.name %></td>
+    <td><%= link_to 'Show', razmer_go %></td>
+    <td><%= link_to 'Edit', edit_razmer_go_path(razmer_go) %></td>
+    <td><%= link_to 'Destroy', razmer_go, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Razmer go', new_razmer_go_path %>

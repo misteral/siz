@@ -1,0 +1,23 @@
+<h1>Listing rosts</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @rosts.each do |rost| %>
+  <tr>
+    <td><%= rost.name %></td>
+    <td><%= link_to 'Show', rost %></td>
+    <td><%= link_to 'Edit', edit_rost_path(rost) %></td>
+    <td><%= link_to 'Destroy', rost, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Rost', new_rost_path %>

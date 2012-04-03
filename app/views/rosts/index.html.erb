@@ -1,23 +1,26 @@
-<h1>Listing rosts</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @rosts.each do |rost| %>
-  <tr>
-    <td><%= rost.name %></td>
-    <td><%= link_to 'Show', rost %></td>
-    <td><%= link_to 'Edit', edit_rost_path(rost) %></td>
-    <td><%= link_to 'Destroy', rost, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+<h1>Rosts</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @rosts.each do |rost| %>
+      <tr>
+        <td><%= rost.id %></td>
+        <td><%= link_to rost.name, rost_path(rost) %></td>
+        <td><%= rost.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_rost_path(rost), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', rost_path(rost), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Rost', new_rost_path %>
+<%= link_to 'New', new_rost_path, :class => 'btn btn-primary' %>

@@ -1,10 +1,12 @@
-<p id="notice"><%= notice %></p>
+<h1>/Razmer O</h1>
 
 <p>
-  <b>Name:</b>
+  <b>Name</b><br>
   <%= @razmer_o.name %>
 </p>
 
-
-<%= link_to 'Edit', edit_razmer_o_path(@razmer_o) %> |
-<%= link_to 'Back', razmer_os_path %>
+<div class="form-actions">
+  <%= link_to 'Back', razmer_os_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_razmer_o_path(@razmer_o), :class => 'btn' %>
+  <%= link_to 'Delete', razmer_o_path(@razmer_o), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

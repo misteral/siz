@@ -1,5 +1,7 @@
 Siz1::Application.routes.draw do
 
+  resources :eds
+
   resources :razmer_gos
 
   resources :razmer_os

@@ -1,23 +1,26 @@
-<h1>Listing razmer_ods</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @razmer_ods.each do |razmer_od| %>
-  <tr>
-    <td><%= razmer_od.name %></td>
-    <td><%= link_to 'Show', razmer_od %></td>
-    <td><%= link_to 'Edit', edit_razmer_od_path(razmer_od) %></td>
-    <td><%= link_to 'Destroy', razmer_od, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+<h1>Razmer Ods</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @razmer_ods.each do |razmer_od| %>
+      <tr>
+        <td><%= razmer_od.id %></td>
+        <td><%= link_to razmer_od.name, razmer_od_path(razmer_od) %></td>
+        <td><%= razmer_od.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_razmer_od_path(razmer_od), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', razmer_od_path(razmer_od), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Razmer od', new_razmer_od_path %>
+<%= link_to 'New', new_razmer_od_path, :class => 'btn btn-primary' %>

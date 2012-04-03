@@ -1,0 +1,23 @@
+<h1>Listing eds</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @eds.each do |ed| %>
+  <tr>
+    <td><%= ed.name %></td>
+    <td><%= link_to 'Show', ed %></td>
+    <td><%= link_to 'Edit', edit_ed_path(ed) %></td>
+    <td><%= link_to 'Destroy', ed, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ed', new_ed_path %>

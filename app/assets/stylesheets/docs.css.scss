@@ -1,3 +1,21 @@
 // Place all the styles related to the Docs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.siz70 {
+  float: none;
+  width: 70px;
+  margin-left: 0;
+}
+.siz80 {
+  float: none;
+  width: 80px;
+  margin-left: 0;
+}
+.table th, .table td {
+  padding: 8px;
+  line-height: 18px;
+  border-top: 1px solid #DDD;
+  text-align: center;
+  vertical-align: middle;
+}

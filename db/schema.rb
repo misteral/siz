@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120403111535) do
+ActiveRecord::Schema.define(:version => 20120404035157) do
 
   create_table "doc_tables", :force => true do |t|
     t.integer  "siz_id"
@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(:version => 20120403111535) do
     t.integer  "dolgnost_id"
     t.integer  "razmer_id"
     t.string   "tn"
+    t.boolean  "pol"
   end
 
   create_table "razmer_gos", :force => true do |t|
@@ -116,16 +117,6 @@ ActiveRecord::Schema.define(:version => 20120403111535) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "razmers", :force => true do |t|
-    t.string   "name"
-    t.string   "rost"
-    t.string   "razm"
-    t.string   "razm_g"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "razm_o"
-  end
-
   create_table "rosts", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
@@ -140,6 +131,7 @@ ActiveRecord::Schema.define(:version => 20120403111535) do
     t.string   "nom"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.decimal  "srok"
   end
 
   add_index "sizs", ["tip_so_id"], :name => "index_sizs_on_tip_so_id"

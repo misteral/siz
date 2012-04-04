@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120330030752) do
+ActiveRecord::Schema.define(:version => 20120403111535) do
 
   create_table "doc_tables", :force => true do |t|
     t.integer  "siz_id"
@@ -23,9 +23,11 @@ ActiveRecord::Schema.define(:version => 20120330030752) do
     t.integer  "razmer_go_id"
     t.integer  "razmer_o_id"
     t.integer  "rost_id"
+    t.integer  "ed_id"
   end
 
   add_index "doc_tables", ["doc_id"], :name => "index_doc_tables_on_doc_id"
+  add_index "doc_tables", ["ed_id"], :name => "index_doc_tables_on_ed_id"
   add_index "doc_tables", ["razmer_go_id"], :name => "index_doc_tables_on_razmer_go_id"
   add_index "doc_tables", ["razmer_o_id"], :name => "index_doc_tables_on_razmer_o_id"
   add_index "doc_tables", ["razmer_od_id"], :name => "index_doc_tables_on_razmer_od_id"
@@ -51,6 +53,12 @@ ActiveRecord::Schema.define(:version => 20120330030752) do
   create_table "dolgnosts", :force => true do |t|
     t.string   "name"
     t.integer  "prior"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "eds", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

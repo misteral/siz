@@ -1,0 +1,18 @@
+<%= simple_form_for(@reg_dr) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :siz %>
+    <%= f.association :doc %>
+    <%= f.input :kol %>
+    <%= f.association :rost %>
+    <%= f.association :razmer_o %>
+    <%= f.association :razmer_od %>
+    <%= f.input :razmer_go_references %>
+    <%= f.association :rabotnik %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

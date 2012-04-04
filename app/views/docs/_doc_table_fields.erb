@@ -1,9 +1,8 @@
 <tr class="nested-fields blabla-fields">
-  <% local_row_id = f.object_name.gsub(/[^0-9]+/,'')  %>
-  <% @tek_siz =  Siz.find(@doc.doc_tables[local_row_id.to_i]['siz_id']) %>
-  <td><%= label_tag local_row_id.to_i+1 %></td>
-  <td><%= f.input :siz_id,:as => 'hidden',:wrapper => false %><%= autocomplete_field_tag 'siz_name', @tek_siz.name, docs_autocomplete_siz_name_path, :size => 75, :id_element => '#doc_doc_tables_attributes_'+local_row_id+'_siz_id' %></td>
-  <td><%= label_tag @tek_siz.nom %></td>
+
+  <td><%= label_tag f.object_name.gsub(/[^0-9]+/,'').to_i+1 %></td>
+  <td><%= f.input :siz_id,:as => 'hidden',:wrapper => false %><%= autocomplete_field_tag 'siz_name', "f.object.name", docs_autocomplete_siz_name_path, :size => 75, :id_element => '#doc_doc_tables_attributes_'+f.object_name.gsub(/[^0-9]+/,'')+'_siz_id' %></td>
+  <td><%= label_tag "@tek_siz.nom" %></td>
   <td><%= f.association :ed, :wrapper => :small, :input_html => { :class =>"siz70" } %></td>
   <td><%= f.association :razmer_od, :wrapper => :small, :input_html => { :class =>"siz70" } %></td>
   <td><%= f.association :razmer_go, :wrapper => :small, :input_html => { :class => "siz70"} %></td>

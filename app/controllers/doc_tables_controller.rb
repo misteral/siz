@@ -1,3 +1,2 @@
 class DocTablesController < ApplicationController
-
 end

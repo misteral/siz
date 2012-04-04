@@ -72,6 +72,15 @@ class DocsController < ApplicationController
   def update
     @doc = Doc.find(params[:id])
 
+
+    if params[:doc]['utv'] == '1' # действия по проведению документа
+
+      par = params[:doc][:doc_tables_attributes]
+      #params[:doc][:reg_drs_attributes] = par
+      par.each_index {|val| par[val]['doc_id']=params[:id]}
+    end
+
+
     respond_to do |format|
       if @doc.update_attributes(params[:doc])
         format.html { redirect_to @doc, notice: 'Doc was successfully updated.' }

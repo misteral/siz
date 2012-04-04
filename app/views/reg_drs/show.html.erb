@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Siz:</b>
+  <%= @reg_dr.siz %>
+</p>
+
+<p>
+  <b>Doc:</b>
+  <%= @reg_dr.doc %>
+</p>
+
+<p>
+  <b>Kol:</b>
+  <%= @reg_dr.kol %>
+</p>
+
+<p>
+  <b>Rost:</b>
+  <%= @reg_dr.rost %>
+</p>
+
+<p>
+  <b>Razmer o:</b>
+  <%= @reg_dr.razmer_o %>
+</p>
+
+<p>
+  <b>Razmer od:</b>
+  <%= @reg_dr.razmer_od %>
+</p>
+
+<p>
+  <b>Razmer go references:</b>
+  <%= @reg_dr.razmer_go_references %>
+</p>
+
+<p>
+  <b>Rabotnik:</b>
+  <%= @reg_dr.rabotnik %>
+</p>
+
+
+<%= link_to 'Edit', edit_reg_dr_path(@reg_dr) %> |
+<%= link_to 'Back', reg_drs_path %>

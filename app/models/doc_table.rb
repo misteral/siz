@@ -7,6 +7,5 @@ class DocTable < ActiveRecord::Base
   belongs_to :razmer_od
   belongs_to :ed
 
-  accepts_nested_attributes_for :doc
-  attr_accessible :id, :kol, :siz_id, :siz
+  attr_accessible :id, :kol, :siz_id, :ed_id, :razmer_od_id, :razmer_go_id, :razmer_o_id, :rost_id
 end

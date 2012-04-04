@@ -1,0 +1,37 @@
+<h1>Listing reg_drs</h1>
+
+<table>
+  <tr>
+    <th>Siz</th>
+    <th>Doc</th>
+    <th>Kol</th>
+    <th>Rost</th>
+    <th>Razmer o</th>
+    <th>Razmer od</th>
+    <th>Razmer go references</th>
+    <th>Rabotnik</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @reg_drs.each do |reg_dr| %>
+  <tr>
+    <td><%= reg_dr.siz %></td>
+    <td><%= reg_dr.doc %></td>
+    <td><%= reg_dr.kol %></td>
+    <td><%= reg_dr.rost %></td>
+    <td><%= reg_dr.razmer_o %></td>
+    <td><%= reg_dr.razmer_od %></td>
+    <td><%= reg_dr.razmer_go_references %></td>
+    <td><%= reg_dr.rabotnik %></td>
+    <td><%= link_to 'Show', reg_dr %></td>
+    <td><%= link_to 'Edit', edit_reg_dr_path(reg_dr) %></td>
+    <td><%= link_to 'Destroy', reg_dr, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Reg dr', new_reg_dr_path %>

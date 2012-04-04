@@ -1,5 +1,6 @@
 Siz1::Application.routes.draw do
 
+
   resources :eds
 
   resources :razmer_gos
@@ -14,9 +15,10 @@ Siz1::Application.routes.draw do
 
   resources :docs do
     resources :doc_tables
-   end
+    resources :reg_drs
+  end
 
-    resources :postavshiks
+  resources :postavshiks
 
   resources :sizs
 

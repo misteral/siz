@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  siz: 
+  doc: 
+  kol: 9.99
+  rost: 
+  razmer_o: 
+  razmer_od: 
+  razmer_go_references: MyString
+  rabotnik: 
+
+two:
+  siz: 
+  doc: 
+  kol: 9.99
+  rost: 
+  razmer_o: 
+  razmer_od: 
+  razmer_go_references: MyString
+  rabotnik: 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120404035157) do
+ActiveRecord::Schema.define(:version => 20120404054644) do
 
   create_table "doc_tables", :force => true do |t|
     t.integer  "siz_id"
@@ -117,6 +117,27 @@ ActiveRecord::Schema.define(:version => 20120404035157) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "reg_drs", :force => true do |t|
+    t.integer  "siz_id"
+    t.integer  "doc_id"
+    t.decimal  "kol"
+    t.integer  "rost_id"
+    t.integer  "razmer_o_id"
+    t.integer  "razmer_od_id"
+    t.integer  "razmer_go_id"
+    t.integer  "rabotnik_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "reg_drs", ["doc_id"], :name => "index_reg_drs_on_doc_id"
+  add_index "reg_drs", ["rabotnik_id"], :name => "index_reg_drs_on_rabotnik_id"
+  add_index "reg_drs", ["razmer_go_id"], :name => "index_reg_drs_on_razmer_go_id"
+  add_index "reg_drs", ["razmer_o_id"], :name => "index_reg_drs_on_razmer_o_id"
+  add_index "reg_drs", ["razmer_od_id"], :name => "index_reg_drs_on_razmer_od_id"
+  add_index "reg_drs", ["rost_id"], :name => "index_reg_drs_on_rost_id"
+  add_index "reg_drs", ["siz_id"], :name => "index_reg_drs_on_siz_id"
+
   create_table "rosts", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
@@ -154,18 +175,6 @@ ActiveRecord::Schema.define(:version => 20120404035157) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  create_table "usr_histories", :force => true do |t|
-    t.integer  "docs_id"
-    t.integer  "sizs_id"
-    t.decimal  "kol"
-    t.boolean  "napr"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "usr_histories", ["docs_id"], :name => "index_usr_histories_on_docs_id"
-  add_index "usr_histories", ["sizs_id"], :name => "index_usr_histories_on_sizs_id"
 
   create_table "vid_sos", :force => true do |t|
     t.string   "name"

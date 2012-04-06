@@ -21,6 +21,7 @@ group :development, :test do
     #gem 'railroady'  # применяется для рисования схем
     #gem "rails-erd"
   gem 'i18n_generators'
+  gem 'hirb'
   #gem "nifty-generators"
 
 end

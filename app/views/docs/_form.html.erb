@@ -6,7 +6,12 @@
          <div class="alert alert-error fade in">
            <a class="close" data-dismiss="alert" href="#">&times;</a>
            <%= fdoc.error_notification %>
-     </div>
+           <ul>
+             <% @doc.errors.full_messages.each do |msg| %>
+               <li><%= msg %></li>
+             <% end %>
+           </ul>
+          </div>
     <% end %>
 
    <div class="form-inputs">
@@ -17,7 +22,7 @@
        <%= fdoc.association :rabotnik, :label_method => :rabotnik_fio_tn %>
      <% end  %>
 
-     <%= fdoc.association :tip_doc, :selected => @tip_docum, :readonly => true, :input_html => { :disabled => true} %>
+     <%= fdoc.association :tip_doc, :selected => @tip_docum, :input_html => {:disabled => true}%>
 
       <table class="table table-striped table-bordered table-condensed">
        <thead>
@@ -27,8 +32,6 @@
           <th>ИН</th>
           <th>Ед</th>
           <th>Размер</th>
-          <th>Размер головы</th>
-          <th>Размер обуви</th>
           <th>Рост</th>
           <th>Количество</th>
           <th>Действия</th>

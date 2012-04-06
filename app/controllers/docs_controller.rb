@@ -1,6 +1,21 @@
 class DocsController < ApplicationController
   autocomplete :siz, :name, :full => true
 
+
+ def check_tip
+   if params[:tip_docum]
+     @tip_docum = params[:tip_docum]
+     if @tip_docum = '1'
+       @autocompurl = docs_autocomplete_siz_name_path
+     end
+     if @tip_docum = '2'
+       @autocompurl = docs_autocomplete_siz_name_path
+     end
+     if @tip_docum = '3'
+       @autocompurl = docs_autocomplete_siz_name_path
+     end
+   end
+ end
   # GET /docs
   # GET /docs.json
   def index
@@ -15,7 +30,7 @@ class DocsController < ApplicationController
   # GET /docs/1.json
   def show
     @doc = Doc.find(params[:id])
-
+    check_tip
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @doc }
@@ -26,10 +41,7 @@ class DocsController < ApplicationController
   # GET /docs/new.json
   def new
     @doc = Doc.new
-    if params[:tip_docum]
-      @tip_docum = params[:tip_docum]
-    end
-
+    check_tip
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @doc }
@@ -39,21 +51,13 @@ class DocsController < ApplicationController
   # GET /docs/1/edit
   def edit
     @doc = Doc.find(params[:id])
-    if params[:tip_docum]
-      @tip_docum = params[:tip_docum]
-      filerender = 'docs/new'+@tip_docum
-      render filerender
-    end
+    check_tip
   end
 
   # POST /docs
   # POST /docs.json
   def create
     @doc = Doc.new(params[:doc])
-
-    #table_doc = @doc.doc_tables.build
-    #siz_doc = table_doc.build
-    #razmer_doc = table_doc.build
 
     respond_to do |format|
       if @doc.save

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120404054644) do
+ActiveRecord::Schema.define(:version => 20120405093937) do
 
   create_table "doc_tables", :force => true do |t|
     t.integer  "siz_id"
@@ -36,12 +36,12 @@ ActiveRecord::Schema.define(:version => 20120404054644) do
 
   create_table "docs", :force => true do |t|
     t.string   "name"
-    t.boolean  "utv"
+    t.boolean  "utv",           :default => true, :null => false
     t.integer  "sklad_id"
     t.integer  "postavshik_id"
     t.integer  "rabotnik_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
     t.integer  "tip_doc_id"
   end
 

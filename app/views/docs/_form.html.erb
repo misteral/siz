@@ -12,17 +12,14 @@
    <div class="form-inputs">
      <%= fdoc.input :name %>
      <%= fdoc.input :utv %>
-     <%= fdoc.association :sklad %>
+     <%= fdoc.association :sklad, :selected => 1 %>
      <% if @tip_docum != '1' %>
        <%= fdoc.association :rabotnik, :label_method => :rabotnik_fio_tn %>
      <% end  %>
 
-     <%= fdoc.association :tip_doc %>
+     <%= fdoc.association :tip_doc, :selected => @tip_docum, :readonly => true, :input_html => { :disabled => true} %>
 
-     <%= fdoc.simple_fields_for :reg_drs do |freg| %>
-         <%= render 'reg_dr_fields', {:f => freg} %>
-     <% end %>
-     <table class="table table-striped table-bordered table-condensed">
+      <table class="table table-striped table-bordered table-condensed">
        <thead>
         <tr>
           <th>Номер</th>

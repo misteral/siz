@@ -28,7 +28,6 @@ class DocsController < ApplicationController
     @doc = Doc.new
     if params[:tip_docum]
       @tip_docum = params[:tip_docum]
-      format.html {render 'docs/new'+@tip_docum}
     end
 
     respond_to do |format|
@@ -69,16 +68,34 @@ class DocsController < ApplicationController
 
   # PUT /docs/1
   # PUT /docs/1.json
+  #def change_reg
+
+  #end
+
   def update
     @doc = Doc.find(params[:id])
 
 
-    if params[:doc]['utv'] == '1' # действия по проведению документа
+    #if params[:doc]['utv'] == '1' # действия по проведению документа
+=begin
+      @par =  params[:doc][:doc_tables_attributes]
+      params[:doc][:reg_drs_attributes] = params[:doc][:doc_tables_attributes]
+      params[:doc][:reg_drs_attributes].each_key  do |key|
+        params[:doc][:reg_drs_attributes][key]['doc_id']=params[:id]
+        params[:doc][:reg_drs_attributes][key]['rabotnik_id'] = params[:doc][:rabotnik_id]
+      end
 
-      par = params[:doc][:doc_tables_attributes]
+      @par =  params[:doc][:doc_tables_attributes]
+      params[:doc][:reg_drs_attributes] = params[:doc][:doc_tables_attributes]
+      @par.each_key  do |key|
+        @par[key]['doc_id']=params[:id]
+      end
+
+      params[:doc][:reg_drs_attributes] = @par
       #params[:doc][:reg_drs_attributes] = par
-      par.each_index {|val| par[val]['doc_id']=params[:id]}
-    end
+      #params[:doc][:doc_tables_attributes] = par_save
+=end
+    #end
 
 
     respond_to do |format|

@@ -1,19 +1,31 @@
 class DocsController < ApplicationController
   autocomplete :siz, :name, :full => true
 
+  def get_autocomplete_items(parameters)
+ #   if @tip_docum == '1'
+     items = super(parameters)
+ #   end
+    if @@tip_docum == '2'
+      items = Siz.ost_name.where(get_autocomplete_where_clause(parameters[:model],parameters[:term],parameters[:method],parameters[:options]))
+    end
+  end
 
  def check_tip
    if params[:tip_docum]
      @tip_docum = params[:tip_docum]
-     if @tip_docum = '1'
+     if @tip_docum == '1'
+       @doc_name = TipDoc.find(1).name
        @autocompurl = docs_autocomplete_siz_name_path
      end
-     if @tip_docum = '2'
+     if @tip_docum == '2'
+       @doc_name = TipDoc.find(2).name
        @autocompurl = docs_autocomplete_siz_name_path
      end
-     if @tip_docum = '3'
+     if @tip_docum == '3'
+       @doc_name = TipDoc.find(3).name
        @autocompurl = docs_autocomplete_siz_name_path
      end
+     @@tip_docum = @tip_docum
    end
  end
   # GET /docs

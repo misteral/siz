@@ -12,7 +12,7 @@ class Doc < ActiveRecord::Base
   #has_many :reg_drs, :dependent => :destroy
   #accepts_nested_attributes_for :reg_drs, :reject_if => :all_blank
 
-  scope :with_utv, where(:utv => true, :tip_doc_id => [1,2])
+  #scope :with_utv, where(:utv => true, :tip_doc_id => [1,2])
   #has_many :usr_histories, :dependent => :destroy
   #attr_accessor :siz_id, :siz_name, :siz_nom, :siz_sert
   #attr_accessor :siz_name

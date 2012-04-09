@@ -1,6 +1,7 @@
 <%= simple_form_for @doc do |fdoc| %>
  <fieldset>
-   <legend><%= controller.action_name.capitalize %> / Docs</legend>
+
+   <legend><%= controller.action_name.capitalize %> <%= @doc_name %> </legend>
 
     <% if fdoc.error_notification %>
          <div class="alert alert-error fade in">
@@ -22,7 +23,7 @@
        <%= fdoc.association :rabotnik, :label_method => :rabotnik_fio_tn %>
      <% end  %>
 
-     <%= fdoc.association :tip_doc, :selected => @tip_docum, :input_html => {:disabled => true}%>
+     <%= fdoc.input :tip_doc_id, :as=> :hidden, :input_html => {:value => @tip_docum} %>
 
       <table class="table table-striped table-bordered table-condensed">
        <thead>

@@ -15,6 +15,9 @@ gem 'russian', '~> 0.6.0'
 gem "cocoon", :git => 'http://github.com/nathanvda/cocoon.git' #гем позволяет вставлять nested form
 gem 'rails3-jquery-autocomplete' #гем позволяет добавлять к полям autocomlete
 
+#gem "meta_where" # поддержка no_equal для запросов
+#gem 'rails_sql_views'   #sql view непонятно как использовать
+
 #gem 'nested_form', :git => 'http://github.com/ryanb/nested_form.git'
 
 group :development, :test do

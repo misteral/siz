@@ -2,12 +2,14 @@ class DocsController < ApplicationController
   autocomplete :siz, :name, :full => true
 
   def get_autocomplete_items(parameters)
+    items = super(parameters)
  #   if @tip_docum == '1'
-     items = super(parameters)
  #   end
     if @@tip_docum == '2'
       items = Siz.ost_name.where(get_autocomplete_where_clause(parameters[:model],parameters[:term],parameters[:method],parameters[:options]))
     end
+
+    items
   end
 
  def check_tip
@@ -15,15 +17,12 @@ class DocsController < ApplicationController
      @tip_docum = params[:tip_docum]
      if @tip_docum == '1'
        @doc_name = TipDoc.find(1).name
-       @autocompurl = docs_autocomplete_siz_name_path
-     end
+      end
      if @tip_docum == '2'
        @doc_name = TipDoc.find(2).name
-       @autocompurl = docs_autocomplete_siz_name_path
      end
      if @tip_docum == '3'
        @doc_name = TipDoc.find(3).name
-       @autocompurl = docs_autocomplete_siz_name_path
      end
      @@tip_docum = @tip_docum
    end
@@ -69,8 +68,11 @@ class DocsController < ApplicationController
   # POST /docs
   # POST /docs.json
   def create
-    @doc = Doc.new(params[:doc])
+    @@tip_docum = @tip_docum
 
+    params[:doc][:doc_tables_attributes].each_key {|key|  params[:doc][:doc_tables_attributes][key]['kol'] = params[:doc][:doc_tables_attributes][key]['kol'].to_i*(-1)}
+
+    @doc = Doc.new(params[:doc])
     respond_to do |format|
       if @doc.save
         format.html { redirect_to @doc, notice: 'Doc was successfully created.' }

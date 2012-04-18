@@ -1,25 +1,50 @@
-<%= form_for(@dolgnost) do |f| %>
-  <% if @dolgnost.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@dolgnost.errors.count, "error") %> prohibited this dolgnost from being saved:</h2>
+<%= simple_form_for @dolgnost do |f| %>
+    <fieldset>
 
-      <ul>
-      <% @dolgnost.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+      <legend><%= controller.action_name.capitalize %> <%= @dolgnost.name %> </legend>
+
+       <% if f.error_notification %>
+            <div class="alert alert-error fade in">
+              <a class="close" data-dismiss="alert" href="#">&times;</a>
+              <%= fdoc.error_notification %>
+              <ul>
+                <% @doc.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+              </ul>
+             </div>
+       <% end %>
+    <div class="form-inputs">
+
+      <%= f.input :name %>
+      <%= f.input :prior %>
+
+       <table class="table table-striped table-bordered table-condensed">
+        <thead>
+         <tr>
+           <th>Номер</th>
+           <th>СИЗ</th>
+           <th>ИН</th>
+           <th>Ед</th>
+           <th>Срок на год</th>
+         </tr>
+         </thead>
+        <tbody>
+         <%= f.simple_fields_for :pologenos do |table| %>
+             <%= render 'pologeno_fields', {:f => table} %>
+         <% end %>
+        <div id="target_p"></div>
+         </tbody>
+      </table>
+        <div id="pologenos_bott">
+        <%= link_to_add_association  'Добавить строку', f, :pologenos , :class => 'btn'%>
+        </div>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :prior %><br />
-    <%= f.number_field :prior %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="form-actions">
+    <%= f.button :submit, :class => 'btn btn-primary' %>
+     <%= link_to 'Отмена', dolgnosts_path, :class => 'btn' %>
+   </div>
+
+  </fieldset>
 <% end %>

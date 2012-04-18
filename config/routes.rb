@@ -1,6 +1,8 @@
 Siz1::Application.routes.draw do
 
 
+  resources :pologenos
+
   resources :eds
 
   resources :razmer_gos
@@ -12,6 +14,7 @@ Siz1::Application.routes.draw do
   resources :rosts
 
   get 'docs/autocomplete_siz_name'
+  get 'dolgnosts/autocomplete_siz_name'
 
   resources :docs do
     resources :doc_tables

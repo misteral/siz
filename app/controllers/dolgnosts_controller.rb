@@ -1,4 +1,5 @@
 class DolgnostsController < ApplicationController
+  autocomplete :siz, :name, :full => true
   # GET /dolgnosts
   # GET /dolgnosts.json
   def index

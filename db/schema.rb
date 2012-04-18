@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120405093937) do
+ActiveRecord::Schema.define(:version => 20120418105741) do
 
   create_table "doc_tables", :force => true do |t|
     t.integer  "siz_id"
@@ -79,6 +79,19 @@ ActiveRecord::Schema.define(:version => 20120405093937) do
     t.datetime "updated_at", :null => false
     t.string   "name"
   end
+
+  create_table "pologenos", :force => true do |t|
+    t.integer  "siz_id"
+    t.decimal  "nagod"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "dolgnost_id"
+    t.integer  "ed_id"
+  end
+
+  add_index "pologenos", ["dolgnost_id"], :name => "index_pologenos_on_dolgnost_id"
+  add_index "pologenos", ["ed_id"], :name => "index_pologenos_on_ed_id"
+  add_index "pologenos", ["siz_id"], :name => "index_pologenos_on_siz_id"
 
   create_table "postavshiks", :force => true do |t|
     t.string   "name"

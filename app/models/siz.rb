@@ -3,6 +3,7 @@ class Siz < ActiveRecord::Base
   belongs_to :vid_so
   has_many :doc_tables
   has_many :ostatoks
+  has_many :pologenos
 
   #has_many :reg_drs
 

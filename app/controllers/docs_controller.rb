@@ -68,9 +68,10 @@ class DocsController < ApplicationController
   # POST /docs
   # POST /docs.json
   def create
-    @@tip_docum = @tip_docum
-
+    #@@tip_docum = @tip_docum
+    if params[:doc][:tip_doc_id] == "2"
     params[:doc][:doc_tables_attributes].each_key {|key|  params[:doc][:doc_tables_attributes][key]['kol'] = params[:doc][:doc_tables_attributes][key]['kol'].to_i*(-1)}
+    end
 
     @doc = Doc.new(params[:doc])
     respond_to do |format|

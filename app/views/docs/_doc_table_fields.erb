@@ -1,8 +1,8 @@
 <tr class="nested-fields blabla-fields">
 
   <td><%= label_tag f.object_name.gsub(/[^0-9]+/,'').to_i+1 %></td>
-  <td><%= f.input :siz_id,:wrapper => false, :input_html => { :id =  }%>
-    <%= autocomplete_field_tag 'doc_doc_tables_attributes_new_doc_tables_siz_name', (f.object.siz_id) ? Siz.find(f.object.siz_id).name : '' , docs_autocomplete_siz_name_path, :size => 75, :id_element => 'doc_doc_tables_attributes_new_doc_tables_siz_id' %></td>
+  <td><%= f.input :siz_id,:as => "hidden", :wrapper => false, :input_html => { :id => "doc_doc_tables_attributes_new_doc_tables_siz_id" } %>
+    <%= autocomplete_field_tag 'doc_doc_tables_attributes_new_doc_tables_siz_name', (f.object.siz_id) ? Siz.find(f.object.siz_id).name : '' , docs_autocomplete_siz_name_path, :size => 75, :id_element => '#doc_doc_tables_attributes_new_doc_tables_siz_id' %></td>
   <td><%= label_tag "@tek_siz.nom" %></td>
   <td><%= f.association :ed, :wrapper => :small, :selected => 1, :input_html => { :class =>"siz70" } %></td>
   <td><%= f.association :razmer_od, :wrapper => :small, :input_html => { :class =>"siz70" } %></td>

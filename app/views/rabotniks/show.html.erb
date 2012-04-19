@@ -1,29 +1,17 @@
-<h1>Rabotnik</h1>
+<h2> <%= @rabotnik.rabotnik_fio_tn %></h2>
 
-<p>
-  <b>Imy</b><br>
-  <%= @rabotnik.imy %>
-</p>
-
-<p>
-  <b>Otch</b><br>
-  <%= @rabotnik.otch %>
-</p>
-
-<p>
-  <b>Fam</b><br>
-  <%= @rabotnik.fam %>
-</p>
-
-<p>
-  <b>Otdel</b><br>
-  <%= @rabotnik.otdel_id %>
-</p>
-
-<p>
-  <b>Dolgnost</b><br>
-  <%= @rabotnik.dolgnost_id %>
-</p>
+<div class="row">
+  <div class="span4">
+    <p><b>Отдел:</b> <%= @rabotnik.otdel[:name] %></p>
+  </div>
+  <div class="span4">
+    <p><b>Должность</b> <%= @rabotnik.dolgnost[:name] %></p>
+  </div>
+  <div class="span4">
+    <p><b>Рост: </b> <%= @rabotnik.rost[:name] %></p>
+    <p><b>Размер одежды: </b> <%= @rabotnik.razmer_od[:name] %></p>
+  </div>
+</div>
 
 <div class="form-actions">
   <%= link_to 'Back', rabotniks_path, :class => 'btn'  %>

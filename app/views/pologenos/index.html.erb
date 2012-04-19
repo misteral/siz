@@ -1,0 +1,25 @@
+<h1>Listing pologenos</h1>
+
+<table>
+  <tr>
+    <th>Siz</th>
+    <th>Nagod</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pologenos.each do |pologeno| %>
+  <tr>
+    <td><%= pologeno.siz %></td>
+    <td><%= pologeno.nagod %></td>
+    <td><%= link_to 'Show', pologeno %></td>
+    <td><%= link_to 'Edit', edit_pologeno_path(pologeno) %></td>
+    <td><%= link_to 'Destroy', pologeno, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pologeno', new_pologeno_path %>

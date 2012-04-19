@@ -1,0 +1,12 @@
+<%= simple_form_for(@pologeno) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :siz %>
+    <%= f.input :nagod %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

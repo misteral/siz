@@ -1,25 +1,26 @@
-<h1>Listing dolgnosts</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Prior</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @dolgnosts.each do |dolgnost| %>
-  <tr>
-    <td><%= dolgnost.name %></td>
-    <td><%= dolgnost.prior %></td>
-    <td><%= link_to 'Show', dolgnost %></td>
-    <td><%= link_to 'Edit', edit_dolgnost_path(dolgnost) %></td>
-    <td><%= link_to 'Destroy', dolgnost, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+<h1>Dolgnosts</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @dolgnosts.each do |dolgnost| %>
+      <tr>
+        <td><%= dolgnost.id %></td>
+        <td><%= link_to dolgnost.name, dolgnost_path(dolgnost) %></td>
+        <td><%= dolgnost.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_dolgnost_path(dolgnost), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', dolgnost_path(dolgnost), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Dolgnost', new_dolgnost_path %>
+<%= link_to 'New', new_dolgnost_path, :class => 'btn btn-primary' %>

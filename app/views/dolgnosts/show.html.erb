@@ -1,15 +1,17 @@
-<p id="notice"><%= notice %></p>
+<h1>/Dolgnost</h1>
 
 <p>
-  <b>Name:</b>
+  <b>Name</b><br>
   <%= @dolgnost.name %>
 </p>
 
 <p>
-  <b>Prior:</b>
+  <b>Prior</b><br>
   <%= @dolgnost.prior %>
 </p>
 
-
-<%= link_to 'Edit', edit_dolgnost_path(@dolgnost) %> |
-<%= link_to 'Back', dolgnosts_path %>
+<div class="form-actions">
+  <%= link_to 'Back', dolgnosts_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_dolgnost_path(@dolgnost), :class => 'btn' %>
+  <%= link_to 'Delete', dolgnost_path(@dolgnost), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

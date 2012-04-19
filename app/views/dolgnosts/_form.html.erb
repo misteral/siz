@@ -1,7 +1,7 @@
 <%= simple_form_for @dolgnost do |f| %>
     <fieldset>
 
-      <legend><%= controller.action_name.capitalize %> <%= @dolgnost.name %> </legend>
+      <legend><%= controller.action_name.capitalize %>  Должность </legend>
 
        <% if f.error_notification %>
             <div class="alert alert-error fade in">
@@ -18,7 +18,7 @@
 
       <%= f.input :name %>
       <%= f.input :prior %>
-
+      <div>Положенные СИЗ</div>
        <table class="table table-striped table-bordered table-condensed">
         <thead>
          <tr>
@@ -30,10 +30,12 @@
            <th>Действия</th>
          </tr>
          </thead>
-        <tbody id="target-p">
+        <tbody>
          <%= f.simple_fields_for :pologenos do |table| %>
              <%= render 'pologeno_fields', {:f => table} %>
          <% end %>
+        <tr id="target-p">
+        </tr>
          </tbody>
       </table>
         <div id="pologenos-bott">

@@ -60,6 +60,9 @@ ru:
         otdel: Отдел  #g
         razmer: Размеры  #g
         tn: Табельный номер  #g
+        rost: Рост
+        razmer_od: Размер одежды
+        razmer_o: Размер обуви
 
       razmer:
         doc_tables: doc_tables  #g

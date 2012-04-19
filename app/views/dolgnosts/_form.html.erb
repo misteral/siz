@@ -27,16 +27,16 @@
            <th>ИН</th>
            <th>Ед</th>
            <th>Срок на год</th>
+           <th>Действия</th>
          </tr>
          </thead>
-        <tbody>
+        <tbody id="target-p">
          <%= f.simple_fields_for :pologenos do |table| %>
              <%= render 'pologeno_fields', {:f => table} %>
          <% end %>
-        <div id="target_p"></div>
          </tbody>
       </table>
-        <div id="pologenos_bott">
+        <div id="pologenos-bott">
         <%= link_to_add_association  'Добавить строку', f, :pologenos , :class => 'btn'%>
         </div>
     </div>

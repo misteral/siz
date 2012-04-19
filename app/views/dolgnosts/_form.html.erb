@@ -6,9 +6,9 @@
        <% if f.error_notification %>
             <div class="alert alert-error fade in">
               <a class="close" data-dismiss="alert" href="#">&times;</a>
-              <%= fdoc.error_notification %>
+              <%= f.error_notification %>
               <ul>
-                <% @doc.errors.full_messages.each do |msg| %>
+                <% @dolgnost.errors.full_messages.each do |msg| %>
                   <li><%= msg %></li>
                 <% end %>
               </ul>

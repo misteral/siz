@@ -2,20 +2,35 @@
 
     <legend><%= controller.action_name.capitalize %> Редактирование работника</legend>
 
-
     <% if f.error_notification %>
-        <div class="alert alert-error fade in">
-          <a class="close" data-dismiss="alert" href="#">&times;</a>
-          <%= f.error_notification %>
-    </div>
+         <div class="alert alert-error fade in">
+           <a class="close" data-dismiss="alert" href="#">&times;</a>
+           <%= f.error_notification %>
+           <ul>
+             <% @rabotnik.errors.full_messages.each do |msg| %>
+               <li><%= msg %></li>
+             <% end %>
+           </ul>
+          </div>
     <% end %>
-      <%= f.input :tn %>
-      <%= f.input :imy %>
-      <%= f.input :otch %>
-      <%= f.input :fam %>
-      <%= f.association :dolgnost %>
-      <%= f.association :otdel %>
+    <div class="row">
+        <div class="span4">
+          <%= f.input :fam %>
+          <%= f.input :imy %>
+          <%= f.input :otch %>
+          <%= f.association :pol %>
+          <%= f.input :tn %>
+          <%= f.association :dolgnost %>
+          <%= f.association :otdel %>
+        </div>
+        <div class="span4">
+          <%= f.association :rost %>
+          <%= f.association :razmer_od %>
+          <%= f.association :razmer_o %>
+        </div>
+    </div>
+    <div class="form-actions">
       <%= f.button :submit, :class => 'btn-primary' %>
       <%= link_to 'Отмена', rabotniks_path, :class => 'btn' %>
-
+    </div>
     <% end %>

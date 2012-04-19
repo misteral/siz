@@ -1,10 +1,12 @@
-<p id="notice"><%= notice %></p>
+<h1>/Tip So</h1>
 
 <p>
-  <b>Name:</b>
+  <b>Name</b><br>
   <%= @tip_so.name %>
 </p>
 
-
-<%= link_to 'Edit', edit_tip_so_path(@tip_so) %> |
-<%= link_to 'Back', tip_sos_path %>
+<div class="form-actions">
+  <%= link_to 'Back', tip_sos_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_tip_so_path(@tip_so), :class => 'btn' %>
+  <%= link_to 'Delete', tip_so_path(@tip_so), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

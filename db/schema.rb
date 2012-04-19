@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120419031937) do
+ActiveRecord::Schema.define(:version => 20120419041626) do
 
   create_table "doc_tables", :force => true do |t|
     t.integer  "siz_id"
@@ -93,6 +93,10 @@ ActiveRecord::Schema.define(:version => 20120419031937) do
   add_index "pologenos", ["ed_id"], :name => "index_pologenos_on_ed_id"
   add_index "pologenos", ["siz_id"], :name => "index_pologenos_on_siz_id"
 
+  create_table "pols", :force => true do |t|
+    t.string "name"
+  end
+
   create_table "postavshiks", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
@@ -103,18 +107,22 @@ ActiveRecord::Schema.define(:version => 20120419031937) do
     t.string   "imy"
     t.string   "otch"
     t.string   "fam"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.integer  "otdel_id"
     t.integer  "dolgnost_id"
     t.integer  "razmer_id"
     t.string   "tn"
     t.boolean  "pol"
     t.integer  "rost_id"
-    t.integer  "razmer_od"
+    t.integer  "razmer_od_id"
+    t.integer  "pol_id"
+    t.integer  "razmer_o_id"
   end
 
-  add_index "rabotniks", ["razmer_od"], :name => "index_rabotniks_on_razmer_od"
+  add_index "rabotniks", ["pol_id"], :name => "index_rabotniks_on_pol_id"
+  add_index "rabotniks", ["razmer_o_id"], :name => "index_rabotniks_on_razmer_o_id"
+  add_index "rabotniks", ["razmer_od_id"], :name => "index_rabotniks_on_razmer_od_id"
   add_index "rabotniks", ["rost_id"], :name => "index_rabotniks_on_rost_id"
 
   create_table "razmer_gos", :force => true do |t|

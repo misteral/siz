@@ -1,23 +1,26 @@
-<h1>Listing tip_sos</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @tip_sos.each do |tip_so| %>
-  <tr>
-    <td><%= tip_so.name %></td>
-    <td><%= link_to 'Show', tip_so %></td>
-    <td><%= link_to 'Edit', edit_tip_so_path(tip_so) %></td>
-    <td><%= link_to 'Destroy', tip_so, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+<h1>Типы СИЗ</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tip_sos.each do |tip_so| %>
+      <tr>
+        <td><%= tip_so.id %></td>
+        <td><%= link_to tip_so.name, tip_so_path(tip_so) %></td>
+        <td><%= tip_so.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_tip_so_path(tip_so), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', tip_so_path(tip_so), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Tip so', new_tip_so_path %>
+<%= link_to 'New', new_tip_so_path, :class => 'btn btn-primary' %>

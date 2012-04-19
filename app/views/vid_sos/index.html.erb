@@ -1,23 +1,26 @@
-<h1>Listing vid_sos</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @vid_sos.each do |vid_so| %>
-  <tr>
-    <td><%= vid_so.name %></td>
-    <td><%= link_to 'Show', vid_so %></td>
-    <td><%= link_to 'Edit', edit_vid_so_path(vid_so) %></td>
-    <td><%= link_to 'Destroy', vid_so, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+<h1>Виды СИЗ</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @vid_sos.each do |vid_so| %>
+      <tr>
+        <td><%= vid_so.id %></td>
+        <td><%= link_to vid_so.name, vid_so_path(vid_so) %></td>
+        <td><%= vid_so.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_vid_so_path(vid_so), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', vid_so_path(vid_so), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Vid so', new_vid_so_path %>
+<%= link_to 'New', new_vid_so_path, :class => 'btn btn-primary' %>

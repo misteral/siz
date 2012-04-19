@@ -1,10 +1,12 @@
-<p id="notice"><%= notice %></p>
+<h1>/Vid So</h1>
 
 <p>
-  <b>Name:</b>
+  <b>Name</b><br>
   <%= @vid_so.name %>
 </p>
 
-
-<%= link_to 'Edit', edit_vid_so_path(@vid_so) %> |
-<%= link_to 'Back', vid_sos_path %>
+<div class="form-actions">
+  <%= link_to 'Back', vid_sos_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_vid_so_path(@vid_so), :class => 'btn' %>
+  <%= link_to 'Delete', vid_so_path(@vid_so), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

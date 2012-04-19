@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+  Pol.create([{name: 'Муж.'}, name: 'Жен.'])
+  TipDoc.create([{name: "Приход на склад"}, {name: 'Списание на работника'}, {name: 'Списание с работника'}])

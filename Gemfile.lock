@@ -14,7 +14,7 @@ GIT
       railties (>= 3.1)
 
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     actionmailer (3.2.2)
       actionpack (= 3.2.2)
@@ -155,6 +155,8 @@ GEM
       archive-tar-minitar (>= 0.5.2)
     russian (0.6.0)
       i18n (>= 0.5.0)
+    rvm-capistrano (1.1.0)
+      capistrano (>= 2.0.0)
     sass (3.1.15)
     sass-rails (3.2.4)
       railties (~> 3.2.0)
@@ -203,6 +205,7 @@ DEPENDENCIES
   rails3-jquery-autocomplete
   ruby-debug19
   russian (~> 0.6.0)
+  rvm-capistrano
   sass-rails (~> 3.2.3)
   simple_form
   sqlite3

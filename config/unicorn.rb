@@ -1,4 +1,5 @@
-deploy_to  = "/srv/myapp"
+app = "siz"
+deploy_to  = "/home/ror/projects/#{app}"
 rails_root = "#{deploy_to}/current"
 pid_file   = "#{deploy_to}/shared/pids/unicorn.pid"
 socket_file= "#{deploy_to}/shared/unicorn.sock"

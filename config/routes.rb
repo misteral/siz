@@ -1,6 +1,8 @@
 Siz1::Application.routes.draw do
 
 
+  get "requirement/index"
+
   resources :pologenos
 
   resources :eds

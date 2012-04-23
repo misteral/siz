@@ -9,8 +9,9 @@ class DocTable < ActiveRecord::Base
 
   validates :siz_id, :rost_id, :razmer_od_id, :ed_id, :presence => true
   validates :kol, :presence => true, :numericality => { :only_decimal => true }
-  attr_accessible :id, :kol, :siz_id, :ed_id, :razmer_od_id, :razmer_go_id, :razmer_o_id, :rost_id
+  attr_accessible :id, :kol, :siz_id, :ed_id, :razmer_od_id, :razmer_go_id, :razmer_o_id, :rost_id, :updated_at
 
+  has_many :rabotnik, :through => :doc
 
 =begin
   def self.ost #определение остатка
@@ -20,4 +21,10 @@ class DocTable < ActiveRecord::Base
   end
 =end
 
+  def self.requirements #определение потребности
+    select('doc_tables.*, pologenos.nagod').
+    joins(:doc).where('docs.utv'=>true,'docs.tip_doc_id' => 2).
+    joins(:siz).
+    joins(:rabotnik =>:pologenos).where('pologenos.siz_id = sizs.id')
+  end
 end

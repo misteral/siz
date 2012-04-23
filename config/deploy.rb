@@ -1,6 +1,7 @@
 #$:.unshift(File.expand_path('./lib', ENV['rvm_path'])) # Для работы rvm
 require 'rvm/capistrano' # Для работы rvm
 require 'bundler/capistrano' # Для работы bundler. При изменении гемов bundler автоматически обновит все гемы на сервере, чтобы они в точности соответствовали гемам разработчика. 
+require 'capistrano_colors' #разукрасим
 
 set :application, "siz"
 set :user, "ror"
@@ -40,9 +41,22 @@ namespace :deploy do
     run "if [ -f #{unicorn_pid} ] && [ -e /proc/$(cat #{unicorn_pid}) ]; then kill -USR2 `cat #{unicorn_pid}`; else cd #{deploy_to}/current && bundle exec unicorn -c #{unicorn_conf} -E #{rails_env} -D; fi"
   end
   task :start do
-    run "bundle exec unicorn -c #{unicorn_conf} -E #{rails_env} -D"
+    run "cd #{deploy_to}/current && bundle exec unicorn -c #{unicorn_conf} -E #{rails_env} -D"
   end
   task :stop do
     run "if [ -f #{unicorn_pid} ] && [ -e /proc/$(cat #{unicorn_pid}) ]; then kill -QUIT `cat #{unicorn_pid}`; fi"
   end
 end
+
+namespace :deploy do
+     namespace :assets do
+       task :precompile, :roles => :web, :except => { :no_release => true } do
+         from = source.next_revision(current_revision)
+         if capture("cd #{latest_release} && #{source.local.log(from)} vendor/assets/ app/assets/ | wc -l").to_i > 0
+           run %Q{cd #{latest_release} && #{rake} RAILS_ENV=#{rails_env} #{asset_env} assets:precompile}
+         else
+           logger.info "Skipping asset pre-compilation because there were no asset changes"
+         end
+     end
+   end
+ end

@@ -19,19 +19,19 @@ gem 'rails3-jquery-autocomplete' #гем позволяет добавлять �
 #gem 'rails_sql_views'   #sql view непонятно как использовать
 
 #gem 'nested_form', :git => 'http://github.com/ryanb/nested_form.git'
+gem 'yaml_db', :git =>'http://github.com/lostapathy/yaml_db.git' #dump базы в файл
 
 group :development, :test do
-    #gem 'railroady'  # применяется для рисования схем
-    #gem "rails-erd"
+                                                                   #gem 'railroady'  # применяется для рисования схем
+                                                                   #gem "rails-erd"
   gem 'i18n_generators'
   gem 'hirb'
-  #gem "nifty-generators"
-# Deploy with Capistrano
- gem 'capistrano'
- gem 'rvm-capistrano'
-  # To use debugger
+                                                                   #gem "nifty-generators"
+  # Deploy with Capistrano
+  gem 'capistrano'
+  gem 'rvm-capistrano'
+# To use debugger
   gem 'ruby-debug19', :require => 'ruby-debug'
-  gem 'yaml_db', :git =>'http://github.com/lostapathy/yaml_db.git' #dump базы в файл
 end
 # Gems used only for assets and not required
 # in production environments by default.

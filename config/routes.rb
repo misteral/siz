@@ -1,7 +1,8 @@
 Siz1::Application.routes.draw do
 
 
-  get "requirement/index"
+  get "requirements/index"
+  post "requirements/index"
 
   resources :pologenos
 

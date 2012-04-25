@@ -3,3 +3,16 @@
 
 en:
   hello: "Hello world"
+  Date:
+    formats:
+      # Форматы указываются в виде, поддерживаемом strftime.
+      # По умолчанию используется default.
+      # Можно добавлять собственные форматы
+      #
+      #
+      # Use the strftime parameters for formats.
+      # When no format has been given, it uses default.
+      # You can provide other formats here if you like!
+      default: "%d.%m.%Y"
+      short: "%d %b"
+      long: "%d %B %Y"

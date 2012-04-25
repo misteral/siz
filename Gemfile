@@ -4,7 +4,6 @@ gem 'rails', '3.2.2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'sqlite3'
-gem 'i18n'
 gem 'russian', '~> 0.6.0'
 
 #gem "meta_where" # поддержка no_equal для запросов

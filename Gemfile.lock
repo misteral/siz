@@ -204,7 +204,6 @@ DEPENDENCIES
   cocoon!
   coffee-rails (~> 3.2.1)
   hirb
-  i18n
   i18n_generators
   jquery-rails
   rails (= 3.2.2)

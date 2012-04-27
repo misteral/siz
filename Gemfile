@@ -13,6 +13,8 @@ gem 'russian', '~> 0.6.0'
 gem 'yaml_db', :git =>'http://github.com/lostapathy/yaml_db.git' #dump базы в файл
 gem 'simple_form'
 gem "cocoon", :git => 'http://github.com/nathanvda/cocoon.git' #гем позволяет вставлять nested form
+gem 'rails3-jquery-autocomplete' #гем позволяет добавлять к полям autocomlete
+gem 'twitter-bootstrap-rails', :git => 'http://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 group :development, :test do
   gem 'i18n_generators'
@@ -27,8 +29,6 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'twitter-bootstrap-rails', :git => 'http://github.com/seyhunak/twitter-bootstrap-rails.git'
-  gem 'rails3-jquery-autocomplete' #гем позволяет добавлять к полям autocomlete
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes

@@ -12,14 +12,12 @@ gem 'russian', '~> 0.6.0'
 #gem 'nested_form', :git => 'http://github.com/ryanb/nested_form.git'
 gem 'yaml_db', :git =>'http://github.com/lostapathy/yaml_db.git' #dump базы в файл
 gem 'simple_form'
+gem "cocoon", :git => 'http://github.com/nathanvda/cocoon.git' #гем позволяет вставлять nested form
+
 group :development, :test do
-
-  #gem 'railroady'  # применяется для рисования схем
-  #gem "rails-erd" # тоже для схем
-
   gem 'i18n_generators'
   gem 'hirb'
-  #gem "nifty-generators"
+
   # Deploy with Capistrano
   gem 'capistrano'
   gem 'rvm-capistrano'
@@ -29,7 +27,6 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem "cocoon", :git => 'http://github.com/nathanvda/cocoon.git' #гем позволяет вставлять nested form
   gem 'twitter-bootstrap-rails', :git => 'http://github.com/seyhunak/twitter-bootstrap-rails.git'
   gem 'rails3-jquery-autocomplete' #гем позволяет добавлять к полям autocomlete
   gem 'sass-rails',   '~> 3.2.3'

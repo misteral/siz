@@ -16,7 +16,7 @@ group :development, :test do
 
   #gem 'railroady'  # применяется для рисования схем
   #gem "rails-erd" # тоже для схем
-  gem "cocoon", :git => 'http://github.com/nathanvda/cocoon.git' #гем позволяет вставлять nested form
+
   gem 'i18n_generators'
   gem 'hirb'
   #gem "nifty-generators"
@@ -29,7 +29,7 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-
+  gem "cocoon", :git => 'http://github.com/nathanvda/cocoon.git' #гем позволяет вставлять nested form
   gem 'twitter-bootstrap-rails', :git => 'http://github.com/seyhunak/twitter-bootstrap-rails.git'
   gem 'rails3-jquery-autocomplete' #гем позволяет добавлять к полям autocomlete
   gem 'sass-rails',   '~> 3.2.3'

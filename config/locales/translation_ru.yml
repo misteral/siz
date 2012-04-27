@@ -105,3 +105,8 @@ ru:
       vid_so:
         name: Вид СИЗ  #g
         sizs: sizs  #g
+
+
+  Name: Имя
+  Edit: Редактировать
+  New: Новый

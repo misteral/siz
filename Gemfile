@@ -11,9 +11,9 @@ gem 'russian', '~> 0.6.0'
 
 #gem 'nested_form', :git => 'http://github.com/ryanb/nested_form.git'
 gem 'yaml_db', :git =>'http://github.com/lostapathy/yaml_db.git' #dump базы в файл
-
+gem 'simple_form'
 group :development, :test do
-  gem 'simple_form'
+
   #gem 'railroady'  # применяется для рисования схем
   #gem "rails-erd" # тоже для схем
   gem "cocoon", :git => 'http://github.com/nathanvda/cocoon.git' #гем позволяет вставлять nested form

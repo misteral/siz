@@ -3,7 +3,7 @@
 
 <%= form_tag requirements_index_path, :class => "form-horizontal" do %>
     <%= label_tag "На дату:" %>
-    <%= text_field_tag "date_reg", I18n.l(1.year.since(Date.current)) %>
+    <%= text_field_tag "date_reg", I18n.l(1.year.since(Date.current)), :id => "date_req" %>
     <%= submit_tag "Сформировать", :class => 'btn' %>
 <% end %>
 

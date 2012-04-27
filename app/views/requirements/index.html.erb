@@ -3,31 +3,34 @@
 
 <%= form_tag requirements_index_path, :class => "form-horizontal" do %>
     <%= label_tag "На дату:" %>
-    <%= text_field_tag "date_reg", I18n.l(Date.current) %>
+    <%= text_field_tag "date_reg", I18n.l(1.year.since(Date.current)) %>
     <%= submit_tag "Сформировать", :class => 'btn' %>
 <% end %>
 
 <p>
-<% if @req_fields.size > 0  %>
-    <table class="table table-striped table-bordered table-condensed">
+<% if @summary  %>
+    <table class="table table-bordered table-condensed">
      <thead>
-      <tr>
+      <tr bgcolor="#BEBEC5">
         <th>Наименование СИЗ</th>
         <th>Размер одежды</th>
         <th>Рост</th>
-        <th>Размер обуви</th>
         <th>Количество</th>
       </tr>
       </thead>
      <tbody>
-     <% @req_fields.each do |item| %>
-        <tr>
-          <td><%= Siz.find(item["siz_id"]).name %></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+     <% @summary.each do |siz_id, col_rost_id| %>
+         <tr><td colspan="5"><b><%= Siz.find(siz_id.to_i).name %></b></td></tr>
+         <% col_rost_id.each do |rost_id, col_razmer_od_id| %>
+             <% col_razmer_od_id.each do |razmer_od_id,kol|  %>
+                 <tr>
+                  <td><%= Siz.find(siz_id).name %></td>
+                  <td><%= Rost.find(rost_id).name %></td>
+                  <td><%= RazmerOd.find(razmer_od_id).name %></td>
+                  <td><%= kol %></td>
+                </tr>
+             <% end  %>
+         <% end  %>
      <% end %>
       </tbody>
     </table>

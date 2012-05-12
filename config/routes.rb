@@ -1,6 +1,8 @@
 Siz1::Application.routes.draw do
 
 
+  get "reports/ostatoks"
+
   get "requirements/index"
   post "requirements/index"
 

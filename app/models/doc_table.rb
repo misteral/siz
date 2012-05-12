@@ -12,13 +12,13 @@ class DocTable < ActiveRecord::Base
   attr_accessible :id, :kol, :siz_id, :ed_id, :razmer_od_id, :razmer_go_id, :razmer_o_id, :rost_id, :updated_at
   has_many :rabotnik, :through => :doc
 
-=begin
+
   def self.ost #определение остатка
     select('siz_id,rost_id,razmer_od_id, SUM(kol) as kol').
     joins(:doc).where('docs.utv'=>true,'docs.tip_doc_id' => [1,2]).
     group('doc_tables.razmer_od_id, doc_tables.rost_id, doc_tables.siz_id ')
   end
-=end
+
 =begin
   def self.req(date_p)  #список номенклатуры потребность на дату
     select("doc_tables.*, pologenos.nagod, IF(date(doc_tables.updated_at, +(12*pologenos.nagod) month ) < #{date_p}, 1, 0)").

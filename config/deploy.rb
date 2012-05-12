@@ -8,7 +8,7 @@ load 'deploy/assets'
 set :application, "siz"
 set :user, "ror"
 set :rails_env, "production"
-set :domain, "ror@10.44.33.244" # Это необходимо для деплоя через ssh. Именно ради этого я настоятельно советовал сразу же залить на сервер свой ключ, чтобы не вводить паролей.
+set :domain, "ror@10.44.33.199" # Это необходимо для деплоя через ssh. Именно ради этого я настоятельно советовал сразу же залить на сервер свой ключ, чтобы не вводить паролей.
 set :deploy_to, "/home/ror/projects/#{application}"
 set :use_sudo, false
 set :unicorn_conf, "#{deploy_to}/current/config/unicorn.rb"

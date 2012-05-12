@@ -1,0 +1,23 @@
+<h1>Остаток на складе</h1>
+<p>
+<table class="table table-bordered table-condensed">
+ <thead>
+  <tr bgcolor="#BEBEC5">
+    <th>Наименование СИЗ</th>
+    <th>Размер одежды</th>
+    <th>Рост</th>
+    <th>Количество</th>
+  </tr>
+  </thead>
+ <tbody>
+ <% @ostatoks.each do |e| %>
+             <tr>
+              <td><%= Siz.find(e['siz_id']).name %></td>
+              <td><%= Rost.find(e['rost_id']).name %></td>
+              <td><%= RazmerOd.find(e['razmer_od_id']).name%></td>
+              <td><%= e['kol'] %></td>
+            </tr>
+         <% end  %>
+  </tbody>
+</table>
+</p>
